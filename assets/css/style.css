@@ -1,20 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;600&display=swap");
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #17162E;
-  color: #ffffff;
-  font-family: "Kumbh Sans", sans-serif;
-}
-
 .header {
   padding: 1rem;
 }
 .header__title {
   font-size: 30px;
   font-weight: 600;
-  text-transform: capitalize;
   text-align: center;
 }
 .header__input {
@@ -54,6 +44,74 @@ body {
 .header__text {
   font-size: 13px;
   padding-left: 0.5rem;
+}
+
+.main {
+  background-color: #1D1C3B;
+  width: 60%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px -1px #000000;
+}
+.main__container {
+  display: flex;
+}
+.main__img {
+  width: 10rem;
+  height: auto;
+  padding: 2rem;
+}
+.main__vote {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.main__text {
+  width: 12rem;
+}
+.main__rate, .main__classification {
+  display: inherit;
+}
+.main__rate_number, .main__rate_favorite, .main__classification_number, .main__classification_favorite {
+  padding-left: 0.6rem;
+}
+.main__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.main__about_movie {
+  padding: 2rem 0 0 3rem;
+}
+.main__text_movie {
+  width: 90%;
+  line-height: 1.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #454558;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D1C3B;
+  border-radius: 30px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #17162E;
+  color: #ffffff;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */

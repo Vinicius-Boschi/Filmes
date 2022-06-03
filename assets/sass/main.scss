@@ -1,0 +1,53 @@
+.main {
+    background-color: $background-container;
+    width: 60%;
+    height: auto;
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px -1px #000000;
+
+    &__container {
+        display: flex;
+    }
+
+    &__img {
+        width: 10rem;
+        height: auto;
+        padding: 2rem;  
+    }
+
+    &__vote {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        text-align: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    &__text {
+        width: 12rem;
+    }
+
+    &__rate, &__classification {
+        display: inherit;
+
+        &_number, &_favorite {
+            padding-left: .6rem;
+        }
+    }
+
+    &__button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__about_movie {
+        padding: 2rem 0 0 3rem;
+    }
+
+    &__text_movie {
+        width: 90%;
+        line-height: 1.5rem;
+    }
+}

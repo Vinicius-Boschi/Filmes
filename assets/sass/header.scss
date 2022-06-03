@@ -1,0 +1,54 @@
+.header {
+    padding: 1rem;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__search {
+        width: 23rem;
+        height: 2.6rem;
+        border-radius: .5rem;
+        background-color: $gray;
+        padding: 1rem;
+    }
+
+    &__icon {
+        position: absolute;
+        padding: 1rem;
+    }
+
+    &__favorite {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &__check {
+        all: initial;
+        border: 2px solid #706EA8;
+        width: 10px;
+        height: 10px;
+        border-radius: 4px;
+
+        &:checked {
+            background-color: $gray;
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    &__text {
+        font-size: 13px;
+        padding-left: .5rem;
+    }
+}
