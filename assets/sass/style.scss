@@ -2,10 +2,11 @@
 
 $dark-blue: #17162E;
 $background-container: #1D1C3B;
+$hover: #2b294f;
 $white: #ffffff;
 $gray: #454558;
 
-@import 'header', 'main';
+@import 'header', 'main', 'button';
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -28,4 +29,5 @@ body {
     background-color: $dark-blue;
     color: $white;
     font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
 }

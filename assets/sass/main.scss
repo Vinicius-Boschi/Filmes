@@ -4,6 +4,7 @@
     height: auto;
     border-radius: .5rem;
     box-shadow: 0px 0px 5px -1px #000000;
+    margin: 1rem;
 
     &__container {
         display: flex;
@@ -26,10 +27,12 @@
 
     &__text {
         width: 12rem;
+       
     }
 
     &__rate, &__classification {
         display: inherit;
+        padding-top: 1rem;
 
         &_number, &_favorite {
             padding-left: .6rem;
