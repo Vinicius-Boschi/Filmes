@@ -16,7 +16,13 @@ Treinar requisição de api.
 </ul>
 
 3. Seção Inicial<br><br>
-<img src="assets/img/home.png" alt="home do site"> 
+<img src="assets/img/home.jpg" alt="home do site">
+
+3.1 Pesquisar algum filme <br><br>
+<img src="assets/img/search.jpg" alt="seção de pesquisa">
+
+3.2 Pesquisar algum filme <br><br>
+<img src="assets/img/favorite.jpg" alt="seção de favoritos">
 
 4. Tecnologia usadas: <br>
 

@@ -5,6 +5,7 @@ $background-container: #1D1C3B;
 $hover: #2b294f;
 $white: #ffffff;
 $gray: #454558;
+$text: #ACACAC;
 
 @import 'header', 'main', 'button';
 
@@ -22,12 +23,22 @@ $gray: #454558;
     border-radius: 30px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    max-width: 1260px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    background-color: $dark-blue;
-    color: $white;
-    font-family: 'Kumbh Sans', sans-serif;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+    flex-direction: column;
+    background-color: #17162E;
+    color: #ffffff;
     scroll-behavior: smooth;
+    font-family: "Kumbh Sans", sans-serif;
 }

@@ -101,73 +101,75 @@ window.onload = function() {
   getAllPopularMovies()  // Adiciona a função no site.
 }
 
-function renderMovie(movie) { // Função que vai adicionar as classes no html.
-  const {id, title, poster_path, vote_average, release_date, overview} = movie // É definido o código do filme, nome, foto, pontuação, data e texto sobre ele.
+function renderMovie(movie) {
+
+  const { id, title, poster_path, vote_average, release_date, overview } = movie
   const isFavorited = checkMovieIsFavorited(id)
 
-  const year = new Date(release_date).getFullYear() // O ano do filme.
-  const image = `https://image.tmdb.org/t/p/w500${poster_path}` // Mostra a foto do filme.
+  const year = new Date(release_date).getFullYear()
+  const image = `https://image.tmdb.org/t/p/w500${poster_path}`
 
-  const moviePicture = document.createElement('div') // Cria a tag.
-  moviePicture.classList.add('main__picture') // Adiciona classe a ela
-  container.appendChild(moviePicture) // Adiciona a tag no html.
+  const movieElement = document.createElement('div')
+  movieElement.classList.add('main__movie')
+  container.appendChild(movieElement)
 
-  const imageMovie = document.createElement('img')
-  imageMovie.classList.add('main__img')
-  imageMovie.src = image // Adiciona a foto do filme.
-  imageMovie.alt = `${title} Poster` // Mostra o nome do filme se a foto não funcionar.
-  moviePicture.appendChild(imageMovie)
+  const movieInformations = document.createElement('div')
+  movieInformations.classList.add('main__informations')
 
-  const vote = document.createElement('div')
-  vote.classList.add('main__vote')
-  container.appendChild(vote)
+  const movieImageContainer = document.createElement('div')
+  movieImageContainer.classList.add('main__picture')
+  const movieImage = document.createElement('img')
+  movieImage.classList.add('main__img')
+  movieImage.src = image
+  movieImage.alt = `${title} Poster`
+  movieImageContainer.appendChild(movieImage)
+  movieInformations.appendChild(movieImageContainer)
 
-  const text = document.createElement('p')
-  text.classList.add('main__text')
-  text.textContent = `${title} (${year})` // Adiciona o nome e o ano filme.
-  vote.appendChild(text)
+  const movieTextContainer = document.createElement('div')
+  movieTextContainer.classList.add('main__text')
+  const movieTitle = document.createElement('h4')
+  movieTitle.textContent = `${title} (${year})`
+  movieTextContainer.appendChild(movieTitle)
+  movieInformations.appendChild(movieTextContainer)
 
-  const rate = document.createElement('span')
-  rate.classList.add('main__rate')
-  vote.appendChild(rate)
-  const imageRate = document.createElement('img')
-  imageRate.classList.add('main__img_rate')
-  imageRate.src = 'assets/img/star.svg'
-  rate.appendChild(imageRate)
+  const informations = document.createElement('div')
+  informations.classList.add('main__informations')
+  movieTextContainer.appendChild(informations)
 
-  const textRate = document.createElement('p')
-  textRate.classList.add('main__rate_number')
-  textRate.textContent = `${vote_average}` // Mostra a pontuação do filme.
-  rate.appendChild(textRate)
+  const ratingContainer = document.createElement('div')
+  ratingContainer.classList.add('main__rating')
+  const starImage = document.createElement('img')
+  starImage.src = 'assets/img/star.svg'
+  starImage.alt = 'Star'
+  const movieRate = document.createElement('span')
+  movieRate.classList.add('main__rate')
+  movieRate.textContent = vote_average
+  ratingContainer.appendChild(starImage)
+  ratingContainer.appendChild(movieRate)
+  informations.appendChild(ratingContainer)
 
-  const favorite = document.createElement('span')
-  favorite.classList.add('main__classification')
-  vote.appendChild(favorite)
+  const favorite = document.createElement('div')
+  favorite.classList.add('main__favorite')
+  const favoriteImage = document.createElement('img')
+  favoriteImage.src = isFavorited ? 'assets/img/heart-fill.svg' : 'assets/img/heart.svg'
+  favoriteImage.alt = 'Heart'
+  favoriteImage.classList.add('favoriteImage')
+  favoriteImage.addEventListener('click', (event) => favoriteButtonPressed(event, movie))
+  const favoriteText = document.createElement('span')
+  favoriteText.classList.add('main__favorite')
+  favoriteText.textContent = 'Favoritar'
+  favorite.appendChild(favoriteImage)
+  favorite.appendChild(favoriteText)
+  informations.appendChild(favorite)
 
-  const button = document.createElement('button')
-  button.classList.add('main__button')
-  favorite.appendChild(button)
-
-  const imageFavorite = document.createElement('img')
-  imageFavorite.classList.add('main__img_rate')
-  imageFavorite.src = isFavorited ? 'assets/img/heart_full.svg' : 'assets/img/heart.svg' // Se estiver favoritado vai ser uam foto e se não estiver vai ser outra.
-  imageFavorite.alt = 'Coração'
-  imageFavorite.addEventListener("click", (event) => favoriteButtonPressed(event, movie))
-  button.appendChild(imageFavorite)
-
-  const textFavorite = document.createElement('p')
-  textFavorite.classList.add('main__rate_favorite')
-  textFavorite.textContent = "Favoritar"
-  favorite.appendChild(textFavorite)
-
-  const textAbout = document.createElement('div')
-  textAbout.classList.add('main__about_movie')
-  container.appendChild(textAbout)
+  const movieDescriptionContainer = document.createElement('div')
+  movieDescriptionContainer.classList.add('main__description')
+  const movieDescription = document.createElement('span')
+  movieDescription.textContent = overview
+  movieDescriptionContainer.appendChild(movieDescription)
   
-  const textMovie = document.createElement('p')
-  textMovie.classList.add('main__text_movie')
-  textMovie.textContent = `${overview}` // Mostra a descrição do filme.
-  textAbout.appendChild(textMovie)
+  movieElement.appendChild(movieInformations)
+  movieElement.appendChild(movieDescriptionContainer)
 }
 
 let button = $(".btn")
