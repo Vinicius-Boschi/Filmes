@@ -21,7 +21,7 @@ Treinar requisição de api.
 3.1 Pesquisar algum filme <br><br>
 <img src="assets/img/search.jpg" alt="seção de pesquisa">
 
-3.2 Pesquisar algum filme <br><br>
+3.2 Favoritar algum filme <br><br>
 <img src="assets/img/favorite.jpg" alt="seção de favoritos">
 
 4. Tecnologia usadas: <br>
